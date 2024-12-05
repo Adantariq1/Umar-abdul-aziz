@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A special birthday wish for my bestie Mehreen Baji from Umar Alizai.">
+    <title>Happy Birthday Mehreen Baji!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-top: 100px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin: 20px;
+            line-height: 1.8;
+            animation: fadeIn 5s ease-in-out;
+        }
+
+        .hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, #ff6f91, #ff8e72);
+            clip-path: polygon(50% 0%, 61% 16%, 72% 0%, 100% 50%, 72% 100%, 50% 84%, 28% 100%, 0% 50%, 28% 0%, 39% 16%);
+            animation: float 5s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100%) scale(0.5) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-200%) scale(1.2) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 Happy Birthday, Mehreen Baji! 🎉</h1>
+    <p>
+        Mehreen Baji, on your special day, I want to take a moment to let you know just how much you mean to me. 
+        From the very beginning of our friendship, you've been a constant source of support, kindness, and joy. 
+        Your infectious laughter, your caring heart, and your ability to turn any moment into a cherished memory are things I truly treasure. 
+        I can't even begin to count all the times you've been there for me, listening, advising, or just making me laugh when I needed it most.
+    </p>
+    <p>
+        I feel so blessed to have you as a best friend, someone I can trust completely and share everything with. 
+        You’re not just my best friend; you’re family, and I’m so grateful for every single moment we've spent together. 
+        As you celebrate another year of your amazing life, I hope this year brings you all the love, happiness, and success you deserve.
+        You have such a bright soul, and I know you're destined for incredible things. Never forget how truly special and loved you are. 
+    </p>
+    <p>
+        Thank you for always being you—authentic, beautiful, and incredibly inspiring. 
+        Here's to many more memories, countless laughs, and endless moments of joy ahead. 
+        You are irreplaceable, and I am so lucky to have you in my life. Happy birthday, once again! 🎂💖
+    </p>
+    <p><strong>From: Umar Alizai 💖</strong></p>
+
+    <div class="hearts">
+        <!-- JavaScript will generate hearts -->
+    </div>
+
+    <script>
+        const heartContainer = document.querySelector('.hearts');
+        const colors = ['#ff6f91', '#f9a8d4', '#fcd34d', '#7dd3fc', '#86efac'];
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = `${Math.random() * 100}vw`;
+            heart.style.animationDuration = `${3 + Math.random() * 2}s`;
+            heart.style.background = colors[Math.floor(Math.random() * colors.length)];
+            heartContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
